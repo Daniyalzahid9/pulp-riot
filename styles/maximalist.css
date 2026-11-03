@@ -83,45 +83,6 @@ body.shake-riot {
 }
 
 /* ==========================================================================
-   LIVE SYNDICATE ACTIVITY NOTIFICATION TOAST
-   ========================================================================== */
-.live-syndicate-toast {
-  position: fixed;
-  bottom: 80px;
-  left: 20px;
-  background: var(--paper);
-  color: var(--ink);
-  border: var(--border-thick);
-  box-shadow: 6px 6px 0 var(--ink);
-  padding: 10px 14px;
-  z-index: 85;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
-  font-weight: 700;
-  max-width: 380px;
-  transform: translateY(140%);
-  opacity: 0;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
-  pointer-events: none;
-}
-
-.live-syndicate-toast.show {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-.toast-pill {
-  background: var(--theme-hot);
-  color: var(--paper);
-  padding: 2px 6px;
-  font-size: 0.72rem;
-  border: 1px solid var(--ink);
-}
-
-/* ==========================================================================
    KINETIC CAUTION MARQUEES
    ========================================================================== */
 .marquee-strip {
@@ -164,20 +125,6 @@ body.shake-riot {
   gap: 2.5rem;
   padding-right: 2.5rem;
   will-change: transform;
-  animation: marqueeRoll 16s linear infinite !important;
-}
-
-.marquee-strip.diagonal-left .marquee-track {
-  animation: marqueeRoll 14s linear infinite !important;
-}
-
-.marquee-strip.reverse .marquee-track {
-  animation-direction: reverse !important;
-}
-
-@keyframes marqueeRoll {
-  0% { transform: translate3d(0, 0, 0); }
-  100% { transform: translate3d(-50%, 0, 0); }
 }
 
 /* ==========================================================================

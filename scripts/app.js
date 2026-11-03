@@ -920,5 +920,4 @@ document.addEventListener('DOMContentLoaded', () => {
   initClubAndRadar();
   initManifestForm();
   initScrollReveal();
-  initLiveTelemetry();
 });
