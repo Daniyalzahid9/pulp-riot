@@ -853,8 +853,8 @@ function initMarqueeReels() {
     track.style.animation = 'none';
     track.style.willChange = 'transform';
 
-    // Normal, smooth readable scrolling speed (0.45 - 0.55 px/frame)
-    const speed = parseFloat(track.dataset.speed) || (idx === 1 ? 0.55 : 0.45);
+    // Natural, normal standard marquee cruising speed (~1.15 - 1.35 px/frame)
+    const speed = parseFloat(track.dataset.speed) || (idx === 1 ? 1.35 : 1.15);
     reels.push({
       el: track,
       offset: 0,
