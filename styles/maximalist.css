@@ -203,7 +203,7 @@ body.shake-riot {
   text-decoration: none;
   color: var(--ink);
   font-family: var(--font-display);
-  font-size: clamp(1.3rem, 2.5vw, 2rem);
+  font-size: clamp(1.2rem, 2.2vw, 2rem);
   letter-spacing: -0.04em;
   background: var(--theme-secondary);
   padding: 6px 14px;
@@ -223,6 +223,108 @@ body.shake-riot {
   align-items: center;
   gap: 12px;
   list-style: none;
+}
+
+.header-right-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Mobile Hamburger Trigger (Hidden on Desktop) */
+.mobile-hamburger-btn {
+  display: none;
+  background: var(--theme-yellow);
+  color: var(--ink);
+  border: var(--border-thick);
+  box-shadow: 4px 4px 0 var(--ink);
+  padding: 8px 12px;
+  font-size: 1.35rem;
+  font-family: var(--font-mono);
+  font-weight: 900;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.mobile-hamburger-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+/* Slide-in Mobile Drawer Navigation */
+.mobile-nav-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(7, 7, 7, 0.75);
+  z-index: 120;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.mobile-nav-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-nav-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: min(340px, 85vw);
+  height: 100vh;
+  background: var(--paper);
+  border-left: var(--border-mega);
+  z-index: 130;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transform: translateX(105%);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow-y: auto;
+}
+
+.mobile-nav-drawer.open {
+  transform: translateX(0);
+}
+
+.mobile-drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: var(--border-thick);
+  padding-bottom: 14px;
+  margin-bottom: 8px;
+}
+
+.mobile-drawer-title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+}
+
+.mobile-nav-item {
+  display: block;
+  text-decoration: none;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  padding: 14px 16px;
+  background: var(--theme-secondary);
+  border: var(--border-thick);
+  box-shadow: 4px 4px 0 var(--ink);
+  text-transform: uppercase;
+  transition: transform 0.1s ease;
+}
+
+.mobile-nav-item:nth-child(2) { background: var(--theme-yellow); }
+.mobile-nav-item:nth-child(3) { background: var(--theme-hot); color: var(--paper); }
+.mobile-nav-item:nth-child(4) { background: var(--theme-cyan); }
+.mobile-nav-item:nth-child(5) { background: var(--theme-secondary); }
+
+.mobile-nav-item:active {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0 var(--ink);
 }
 
 .nav-btn {
@@ -1430,8 +1532,18 @@ body.shake-riot {
   .nav-links {
     display: none;
   }
+  .mobile-hamburger-btn {
+    display: block;
+  }
   .mobile-arcade-dock {
-    display: grid;
+    display: none !important;
+  }
+  .top-header {
+    padding: 10px 14px;
+  }
+  .crate-trigger-btn {
+    padding: 8px 12px;
+    font-size: 0.85rem;
   }
   .voltage-pills {
     grid-template-columns: repeat(2, 1fr);
@@ -1439,11 +1551,50 @@ body.shake-riot {
   .vault-grid {
     grid-template-columns: 1fr;
   }
-  .manifest-grid {
-    grid-template-columns: 1fr;
+  .manifest-section {
+    padding: 40px 12px;
+  }
+  .manifest-section .section-wrap {
+    padding: 0;
+  }
+  .manifest-banner {
+    padding: 16px;
+    margin-bottom: 24px;
   }
   .manifest-clipboard {
-    padding: 24px 18px;
+    padding: 20px 14px;
+    box-shadow: 6px 6px 0 var(--ink);
+    border-width: 4px;
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .manifest-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .form-input,
+  .form-select,
+  .form-textarea {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 0.95rem;
+    padding: 12px;
+    box-shadow: 2px 2px 0 var(--ink);
+  }
+  .form-label {
+    font-size: 0.78rem;
+    white-space: normal;
+    line-height: 1.3;
+  }
+  .rubber-stamp-overlay {
+    padding: 16px;
+  }
+  .stamp-box {
+    padding: 14px 20px;
+    font-size: 1.8rem;
+    border-width: 5px;
   }
   .sticker-holo {
     display: none;

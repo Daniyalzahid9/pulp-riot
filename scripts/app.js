@@ -853,8 +853,8 @@ function initMarqueeReels() {
     track.style.animation = 'none';
     track.style.willChange = 'transform';
 
-    // Top black reel, middle angled yellow caution strip, bottom black reel
-    const speed = parseFloat(track.dataset.speed) || (idx === 1 ? 1.85 : 1.35);
+    // Normal, smooth readable scrolling speed (0.45 - 0.55 px/frame)
+    const speed = parseFloat(track.dataset.speed) || (idx === 1 ? 0.55 : 0.45);
     reels.push({
       el: track,
       offset: 0,
@@ -878,10 +878,40 @@ function initMarqueeReels() {
   requestAnimationFrame(stepReels);
 }
 
+// ==========================================================================
+// 14. MOBILE 3-LINES HAMBURGER DRAWER ENGINE
+// ==========================================================================
+function initMobileMenu() {
+  const openBtn = document.getElementById('mobile-menu-open-btn');
+  const closeBtn = document.getElementById('mobile-menu-close-btn');
+  const drawer = document.getElementById('mobile-nav-drawer');
+  const backdrop = document.getElementById('mobile-nav-backdrop');
+  const navItems = document.querySelectorAll('.mobile-nav-item');
+
+  function openMenu() {
+    drawer?.classList.add('open');
+    backdrop?.classList.add('open');
+  }
+
+  function closeMenu() {
+    drawer?.classList.remove('open');
+    backdrop?.classList.remove('open');
+  }
+
+  openBtn?.addEventListener('click', openMenu);
+  closeBtn?.addEventListener('click', closeMenu);
+  backdrop?.addEventListener('click', closeMenu);
+
+  navItems.forEach(item => {
+    item.addEventListener('click', closeMenu);
+  });
+}
+
 // BOOTSTRAP ON DOM READY
 document.addEventListener('DOMContentLoaded', () => {
   splashFX = new SplashEngine();
   initMarqueeReels();
+  initMobileMenu();
   initVoltageSwitcher();
   initCustomBlender();
   initFlavorVault();
