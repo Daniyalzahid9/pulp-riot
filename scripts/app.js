@@ -840,9 +840,48 @@ function initLiveTelemetry() {
   }, 3000);
 }
 
+// ==========================================================================
+// 13. 60FPS HARDWARE-ACCELERATED MARQUEE REELS ENGINE
+// ==========================================================================
+function initMarqueeReels() {
+  const tracks = document.querySelectorAll('.marquee-track');
+  const reels = [];
+
+  tracks.forEach((track, idx) => {
+    // Duplicate content once more to ensure ultra-wide 4K screens never see a gap
+    track.innerHTML = track.innerHTML + track.innerHTML;
+    track.style.animation = 'none';
+    track.style.willChange = 'transform';
+
+    // Top black reel, middle angled yellow caution strip, bottom black reel
+    const speed = parseFloat(track.dataset.speed) || (idx === 1 ? 1.85 : 1.35);
+    reels.push({
+      el: track,
+      offset: 0,
+      speed
+    });
+  });
+
+  function stepReels() {
+    for (let i = 0; i < reels.length; i++) {
+      const r = reels[i];
+      r.offset += r.speed;
+      const halfWidth = r.el.scrollWidth / 2;
+      if (halfWidth > 0 && r.offset >= halfWidth) {
+        r.offset -= halfWidth;
+      }
+      r.el.style.transform = `translate3d(-${r.offset}px, 0, 0)`;
+    }
+    requestAnimationFrame(stepReels);
+  }
+
+  requestAnimationFrame(stepReels);
+}
+
 // BOOTSTRAP ON DOM READY
 document.addEventListener('DOMContentLoaded', () => {
   splashFX = new SplashEngine();
+  initMarqueeReels();
   initVoltageSwitcher();
   initCustomBlender();
   initFlavorVault();
