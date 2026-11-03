@@ -40,7 +40,7 @@
         <li><a href="#lab-riot" class="nav-btn">🧪 MIX LAB</a></li>
         <li><a href="#flavor-vault" class="nav-btn">💣 FLAVOR VAULT</a></li>
         <li><a href="#hydraulic-zine" class="nav-btn">⚙️ 12-TON ZINE</a></li>
-        <li><a href="#riot-club" class="nav-btn">📡 RADAR &amp; CLUB</a></li>
+        <li><a href="#riot-club" class="nav-btn">📦 RIOT CLUB</a></li>
         <li><a href="#manifest-hotline" class="nav-btn">📋 WHOLESALE MANIFEST</a></li>
       </ul>
     </nav>
@@ -408,64 +408,40 @@
     </section>
 
     <!-- =====================================================================
-         SECTION 5: RIOT CLUB SUBSCRIPTION & LIVE BODEGA TRUCK RADAR
+         SECTION 5: RIOT CLUB SYNDICATE SUBSCRIPTION
          ===================================================================== -->
     <section class="section-wrap" id="riot-club">
-      <div class="club-radar-grid">
-        <!-- Left: Riot Club Subscription Box -->
-        <div class="club-box">
-          <span class="brutal-tag hot">SYNDICATE MEMBERSHIP</span>
-          <h2 class="section-title" style="font-size:clamp(2rem,3.5vw,3rem);margin:14px 0;">
-            JOIN THE RIOT CLUB
-          </h2>
-          <p style="font-weight:700;font-size:1.05rem;margin-bottom:18px;">
-            Get a cold-chain insulated 6-Pack Riot Crate dropped on your doorstep before 7:00 AM. Includes underground test-kitchen bottles never sold to the public.
-          </p>
-
-          <div class="freq-toggle">
-            <button class="filter-pill freq-btn active" data-plan="weekly">⚡ WEEKLY DROP (SAVE 22%)</button>
-            <button class="filter-pill freq-btn" data-plan="biweekly">📦 BI-WEEKLY (SAVE 15%)</button>
+      <div class="club-box" style="max-width:100%;">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:32px;align-items:center;">
+          <div>
+            <span class="brutal-tag hot">SYNDICATE MEMBERSHIP</span>
+            <h2 class="section-title" style="font-size:clamp(2.2rem,4.5vw,3.8rem);margin:14px 0;">
+              JOIN THE RIOT CLUB
+            </h2>
+            <p style="font-weight:700;font-size:1.1rem;line-height:1.5;margin-bottom:18px;">
+              Get a cold-chain insulated 6-Pack Riot Crate dropped on your doorstep before 7:00 AM. Includes underground test-kitchen bottles, experimental Ghost Chili batches, and zero-wait VIP dispatch.
+            </p>
+            <div style="display:flex;flex-wrap:wrap;gap:10px;">
+              <span class="brutal-tag">✓ 36°F INSULATED CRATE</span>
+              <span class="brutal-tag">✓ SECRET LAB FLAVORS</span>
+              <span class="brutal-tag">✓ CANCEL IN 1 CLICK</span>
+            </div>
           </div>
 
-          <div style="background:var(--theme-secondary);border:var(--border-thick);padding:16px;margin-bottom:20px;font-family:var(--font-mono);font-weight:700;">
-            <div style="font-size:1.35rem;" id="club-price-display">$42.00 / WEEK (SAVE 22%)</div>
-            <div style="font-size:0.82rem;margin-top:6px;">✓ FREE OVERNIGHT ICE-PACK COURIER &nbsp; ✓ SKIP OR KILL IN 1 CLICK</div>
-          </div>
+          <div>
+            <div class="freq-toggle">
+              <button class="filter-pill freq-btn active" data-plan="weekly">⚡ WEEKLY DROP (SAVE 22%)</button>
+              <button class="filter-pill freq-btn" data-plan="biweekly">📦 BI-WEEKLY (SAVE 15%)</button>
+            </div>
 
-          <button class="btn-brutal primary" id="join-club-btn" style="width:100%;justify-content:center;">
-            + LOCK IN RIOT CLUB 6-PACK SUBSCRIPTION
-          </button>
-        </div>
+            <div style="background:var(--theme-secondary);border:var(--border-thick);padding:20px;margin-bottom:20px;font-family:var(--font-mono);font-weight:700;">
+              <div style="font-size:1.5rem;" id="club-price-display">$42.00 / WEEK (SAVE 22%)</div>
+              <div style="font-size:0.85rem;margin-top:6px;">✓ FREE OVERNIGHT ICE-PACK COURIER &nbsp; ✓ SKIP OR KILL IN 1 CLICK</div>
+            </div>
 
-        <!-- Right: Live Pop-Up Juice Truck & Bodega Radar -->
-        <div class="radar-box">
-          <div style="display:flex;justify-content:space-between;align-items:center;">
-            <span class="brutal-tag" style="background:var(--theme-secondary);color:var(--ink);">LIVE GPS TELEMETRY</span>
-            <span style="font-family:var(--font-mono);font-size:0.82rem;">3 ARMORED TRUCKS ACTIVE</span>
-          </div>
-
-          <h2 class="section-title" style="color:var(--paper);font-size:clamp(2rem,3.5vw,3rem);margin:14px 0;">
-            BODEGA &amp; TRUCK RADAR
-          </h2>
-
-          <div class="radar-screen" aria-label="Interactive Pop-Up Juice Truck Radar">
-            <div class="radar-sweep" aria-hidden="true"></div>
-
-            <button class="truck-pin" style="top:26%;left:22%;" data-unit="TRUCK #01 // WILLIAMSBURG BEDFORD" data-stock="42 BOTTLES LEFT">
-              🚚 UNIT-01 [SOHO / WBURG]
+            <button class="btn-brutal primary" id="join-club-btn" style="width:100%;justify-content:center;">
+              + LOCK IN RIOT CLUB 6-PACK SUBSCRIPTION
             </button>
-
-            <button class="truck-pin" style="top:62%;left:54%;" data-unit="TRUCK #02 // SHIBUYA CROSSING DROP" data-stock="19 BOTTLES LEFT (LOW!)">
-              🚚 UNIT-02 [DOWNTOWN YARD]
-            </button>
-
-            <button class="truck-pin" style="top:34%;left:68%;" data-unit="BODEGA VAULT // NIGHT OWL DELI" data-stock="88 BOTTLES RESTOCKED">
-              🏪 BODEGA #09 [24/7 FRIDGE]
-            </button>
-          </div>
-
-          <div id="radar-telemetry-readout" style="font-family:var(--font-mono);font-size:0.85rem;background:#1a1a1a;padding:12px;border:2px solid var(--theme-secondary);">
-            &gt;&gt; TAP ANY RADAR PIN ABOVE TO INSPECT LIVE COLD-CRATE INVENTORY
           </div>
         </div>
       </div>
