@@ -5,8 +5,7 @@
   "main": "index.html",
   "type": "module",
   "scripts": {
-    "start": "npx serve -l 4321 .",
-    "record": "node scripts/record_showcase.mjs"
+    "start": "npx serve -l 4321 ."
   },
   "keywords": [
     "maximalism",

@@ -44,15 +44,12 @@ pulp-riot/
 ├── styles/
 │   └── maximalist.css           # Complete Acid Pop Brutalism design engine
 ├── scripts/
-│   ├── app.js                   # Canvas physics, blender engine, crate cart & telemetry
-│   └── record_showcase.mjs      # Playwright automated HD video recording script
+│   └── app.js                   # Canvas physics, blender engine, crate cart & telemetry
 ├── assets/
-│   ├── images/
-│   │   ├── hero-napalm-mango.png   # Bespoke studio product photograph
-│   │   ├── flavor-venom-yuzu.png   # Studio Japanese citrus product photograph
-│   │   └── flavor-magenta-coma.png # Studio pitaya dragonfruit product photograph
-│   └── videos/
-│       └── pulp-riot-demo.webm  # Recorded video walkthrough demonstration
+│   └── images/
+│       ├── hero-napalm-mango.png   # Bespoke studio product photograph
+│       ├── flavor-venom-yuzu.png   # Studio Japanese citrus product photograph
+│       └── flavor-magenta-coma.png # Studio pitaya dragonfruit product photograph
 ├── package.json                 # Project manifest & run scripts
 ├── LICENSE                      # MIT License
 └── README.md                    # Project documentation
