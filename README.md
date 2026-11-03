@@ -62,29 +62,18 @@ pulp-riot/
 
 ## 🚀 Quickstart & Local Execution
 
-This project is built with **zero external framework dependencies** (no build step, no bundlers, pure native browser standards).
+Get the project running locally in 2 simple commands:
 
-### Option 1: Direct Browser Launch
-Simply double click `index.html` or open it with any modern web browser.
-
-### Option 2: Local HTTP Server (Recommended)
-Using Node.js:
 ```bash
-# Clone the repository
+# 1. Clone the repository
 git clone https://github.com/Daniyalzahid9/pulp-riot.git
 cd pulp-riot
 
-# Start the local live server
+# 2. Start the local server
 npm start
 ```
-Navigate to `http://localhost:4321`.
 
-### Option 3: Automated Video Screencast Recording
-To record a fresh high-definition automated video showcase:
-```bash
-npm run record
-```
-The resulting screencast is saved to `assets/videos/pulp-riot-demo.webm`.
+Open your browser at **`http://localhost:4321`** (or access via your local Wi-Fi network on mobile).
 
 ---
 
