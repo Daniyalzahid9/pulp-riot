@@ -1,0 +1,25 @@
+{
+  "name": "pulp-riot",
+  "version": "1.0.0",
+  "description": "⚡ PULP RIOT™ — Pure Acid Pop Brutalism E-Commerce Experience. Interactive 2D Canvas Physics, Custom Potion Blender, Live Telemetry, & Responsive Maximalist Design.",
+  "main": "index.html",
+  "type": "module",
+  "scripts": {
+    "start": "npx serve -l 4321 .",
+    "record": "node scripts/record_showcase.mjs"
+  },
+  "keywords": [
+    "maximalism",
+    "acid-pop",
+    "neo-brutalism",
+    "creative-frontend",
+    "canvas-physics",
+    "interactive-ui",
+    "vanilla-js"
+  ],
+  "author": "Daniyal Zahid",
+  "license": "MIT",
+  "dependencies": {
+    "playwright": "^1.64.1"
+  }
+}

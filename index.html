@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PULP RIOT™ // 100% Cold-Pressed Violence — Acid Pop Brutalist Juice Bar</title>
+  <meta name="description" content="PULP RIOT™ — Raw 12-ton hydraulic cold-pressed super-juices. Zero concentrate, zero mercy. Mix your custom potion or pack a 6-pack riot crate." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Space+Grotesk:wght@500;700;800&family=Space+Mono:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/maximalist.css" />
+</head>
+<body>
+
+  <!-- 2D Interactive Liquid Splash Canvas Overlay -->
+  <canvas id="splash-canvas" aria-hidden="true"></canvas>
+
+  <!-- TOP KINETIC TICKER TAPE -->
+  <div class="marquee-strip" aria-label="Live Press Status Ticker">
+    <div class="marquee-track">
+      <span>⚡ BATCH #409 PRESSING LIVE IN BROOKLYN &amp; TOKYO</span>
+      <span>🔥 PACK 6 BOTTLES UNLOCK 15% RIOT CRATE DISCOUNT</span>
+      <span>💀 ZERO CONCENTRATE // 12-TON HYDRAULIC EXTRACTION // UNPASTEURIZED RAW VOLTAGE</span>
+      <span>🌶️ NEW DROP: NAPALM MANGO (18,000 SHU GHOST AGAVE)</span>
+      <span>⚡ BATCH #409 PRESSING LIVE IN BROOKLYN &amp; TOKYO</span>
+      <span>🔥 PACK 6 BOTTLES UNLOCK 15% RIOT CRATE DISCOUNT</span>
+      <span>💀 ZERO CONCENTRATE // 12-TON HYDRAULIC EXTRACTION // UNPASTEURIZED RAW VOLTAGE</span>
+      <span>🌶️ NEW DROP: NAPALM MANGO (18,000 SHU GHOST AGAVE)</span>
+    </div>
+  </div>
+
+  <!-- BRUTALIST STICKY COMMAND HEADER -->
+  <header class="top-header">
+    <a href="#" class="brand-logo">
+      <span>🧃 PULP RIOT™</span>
+    </a>
+
+    <nav aria-label="Primary Navigation">
+      <ul class="nav-links">
+        <li><a href="#lab-riot" class="nav-btn">🧪 MIX LAB</a></li>
+        <li><a href="#flavor-vault" class="nav-btn">💣 FLAVOR VAULT</a></li>
+        <li><a href="#hydraulic-zine" class="nav-btn">⚙️ 12-TON ZINE</a></li>
+        <li><a href="#riot-club" class="nav-btn">📡 RADAR &amp; CLUB</a></li>
+        <li><a href="#manifest-hotline" class="nav-btn">📋 WHOLESALE MANIFEST</a></li>
+      </ul>
+    </nav>
+
+    <button class="crate-trigger-btn open-crate-trigger" id="header-crate-btn" aria-label="Open 6-Pack Juice Crate">
+      <span>🧃 RIOT CRATE</span>
+      <span class="crate-count-badge crate-count-val">3</span>
+    </button>
+  </header>
+
+  <main id="main-content">
+
+    <!-- =====================================================================
+         SECTION 1: HERO STAGE — "THE FLAVOR DETONATION"
+         ===================================================================== -->
+    <section class="hero-stage" id="hero">
+
+      <!-- Draggable Sticker Bombing Elements -->
+      <div class="sticker sticker-holo" style="top: 16px; right: 24px; transform: rotate(4deg);" title="Drag me anywhere!">
+        ★ DRAG ME // 100% RAW COLD-PRESSED
+      </div>
+
+      <div class="sticker sticker-starburst" style="bottom: 24px; right: 24px;" title="Drag me anywhere!">
+        <svg viewBox="0 0 120 120" width="125" height="125" aria-hidden="true" style="position:absolute;inset:0;z-index:-1;">
+          <polygon points="60,2 73,24 98,12 96,38 118,52 98,68 112,92 86,94 78,118 60,98 42,118 34,94 8,92 22,68 2,52 24,38 22,12 47,24" fill="#FFE600" stroke="#070707" stroke-width="4"/>
+        </svg>
+        <span>12-TON<br/>PRESS<br/>NO CAP</span>
+      </div>
+
+      <!-- Left Column: Brutalist Display Copy & Live Voltage Switcher -->
+      <div class="hero-copy-col">
+        <div class="hero-stamp-row">
+          <span class="brutal-tag">COLD-CHAIN CERTIFIED</span>
+          <span class="brutal-tag hot">PH LEVEL: 2.8 ACID POP</span>
+          <span class="brutal-tag">TAP SCREEN TO SPLASH</span>
+        </div>
+
+        <h1 class="hero-headline">
+          DRINK THE <span class="highlight-block">RIOT.</span>
+        </h1>
+
+        <p class="hero-subcopy">
+          Forget watered-down wellness slop. We crush whole organic Alphonso mangoes, Japanese yuzu, Ghost chili agave, and activated black coconut charcoal under <strong>24,000 LBS of hydraulic steel</strong>. Raw enzymes. Violent flavor.
+        </p>
+
+        <div class="hero-cta-cluster">
+          <button class="btn-brutal primary" id="hero-quick-add" data-flavor-id="RIOT-01">
+            + THROW NAPALM MANGO IN CRATE ($8.50)
+          </button>
+          <a href="#lab-riot" class="btn-brutal secondary">
+            🧪 BUILD YOUR POTION
+          </a>
+        </div>
+
+        <!-- Live Flavor Voltage Switcher -->
+        <div class="voltage-switcher-box">
+          <div class="voltage-label">
+            <span>⚡ LIVE THEME DETONATOR — SWITCH FLAVOR VOLTAGE:</span>
+            <span>[6 CULT SKUS]</span>
+          </div>
+          <div class="voltage-pills" id="voltage-pills">
+            <!-- Populated by scripts/app.js -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Interactive Product Poster Frame -->
+      <div class="hero-visual-col">
+        <div class="hero-poster-frame">
+          <img
+            src="assets/images/hero-napalm-mango.png"
+            alt="PULP RIOT Napalm Mango exploding with fresh mango chunks, red chili peppers and lime wedges"
+            class="hero-poster-img"
+            id="hero-showcase-img"
+          />
+          <div class="hero-poster-hud">
+            <div>
+              <div class="hud-flavor-title" id="hud-flavor-title">RIOT-01 // NAPALM MANGO</div>
+              <div style="font-family:var(--font-mono);font-size:0.78rem;font-weight:700;">500ML ALUMINUM CAN // RAW UNPASTEURIZED</div>
+            </div>
+            <div class="hud-flavor-specs" id="hud-flavor-specs">$8.50 — CULT FAVORITE</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIVE HIGH VOLTAGE HAZARD STRIP & REAL-TIME METRICS -->
+    <div class="high-voltage-strip" aria-label="High Voltage Live Facility Telemetry">
+      <div class="voltage-hazard-bar" aria-hidden="true"></div>
+      <div class="voltage-metrics-row">
+        <div class="voltage-metric-item">
+          <span class="pulse-led" aria-hidden="true"></span>
+          <span>FACILITY VOLTAGE:</span>
+          <span class="metric-val" id="telemetry-voltage">14,240V ACTIVE</span>
+        </div>
+        <div class="voltage-metric-item">
+          <span class="pulse-led hot" aria-hidden="true"></span>
+          <span>HYDRAULIC LOAD:</span>
+          <span class="metric-val">24,000 LBS RAM</span>
+        </div>
+        <div class="voltage-metric-item">
+          <span>BATCH #409 STOCK:</span>
+          <span class="metric-val" id="telemetry-stock">79 / 120 BOTTLES</span>
+        </div>
+        <div class="voltage-metric-item">
+          <span>NEXT PRESS CYCLE:</span>
+          <span class="metric-val" id="telemetry-timer">03:42</span>
+        </div>
+      </div>
+      <div class="voltage-hazard-bar" style="border-top:2px solid var(--ink);border-bottom:none;" aria-hidden="true"></div>
+    </div>
+
+    <!-- CRISS-CROSSING DIAGONAL CAUTION TAPES -->
+    <div class="marquee-strip diagonal-left" aria-hidden="true">
+      <div class="marquee-track">
+        <span>⚠️ CAUTION: HIGH SCOVILLE &amp; CITRIC VOLTAGE // DO NOT SHAKE NEAR WEAK TASTEBUDS // 100% COLD-PRESSED VIOLENCE ⚠️</span>
+        <span>⚠️ CAUTION: HIGH SCOVILLE &amp; CITRIC VOLTAGE // DO NOT SHAKE NEAR WEAK TASTEBUDS // 100% COLD-PRESSED VIOLENCE ⚠️</span>
+      </div>
+    </div>
+
+    <!-- =====================================================================
+         SECTION 2: "LAB RIOT" — CUSTOM POTION BLENDER + FDA NUTRITION RECEIPT
+         ===================================================================== -->
+    <section class="mixer-section" id="lab-riot">
+      <div class="section-wrap">
+        <div class="section-banner">
+          <div>
+            <span class="brutal-tag hot" style="display:inline-block;margin-bottom:10px;">THE LIVE SIGNATURE ENGINE</span>
+            <h2 class="section-title">LAB RIOT // CUSTOM POTION MIXER</h2>
+          </div>
+          <div class="section-kicker">
+            LOAD UP TO 5 RAW SHOTS INTO THE HYDRAULIC VESSEL. WATCH THE NUTRITION RECEIPT MUTATE IN REAL TIME.
+          </div>
+        </div>
+
+        <div class="mixer-grid">
+          <!-- Column 1: Ingredient Arsenal -->
+          <div class="arsenal-panel">
+            <div class="panel-header-bar">
+              <span>01 // SELECT RAW SHOTS</span>
+              <span>BASE: $4.50</span>
+            </div>
+            <div class="ingredient-grid" id="ingredient-grid">
+              <!-- Populated by scripts/app.js -->
+            </div>
+          </div>
+
+          <!-- Column 2: Interactive Hydraulic SVG Vessel -->
+          <div class="vessel-panel">
+            <div class="panel-header-bar" style="background:var(--theme-hot);color:var(--paper);">
+              <span>02 // HYDRAULIC VESSEL</span>
+              <span id="vessel-fill-pct">60% CAPACITANCE</span>
+            </div>
+
+            <div class="blender-svg-wrap">
+              <svg class="blender-svg" viewBox="0 0 220 320" aria-label="Interactive Juice Blender Vessel">
+                <defs>
+                  <clipPath id="jar-clip">
+                    <path d="M 35 30 L 185 30 L 170 290 C 170 302 155 308 110 308 C 65 308 50 302 50 290 Z" />
+                  </clipPath>
+                  <pattern id="halftone-dots" width="10" height="10" patternUnits="userSpaceOnUse">
+                    <circle cx="3" cy="3" r="1.5" fill="rgba(7,7,7,0.22)" />
+                  </pattern>
+                </defs>
+
+                <!-- Glass Jar Background -->
+                <path d="M 35 30 L 185 30 L 170 290 C 170 302 155 308 110 308 C 65 308 50 302 50 290 Z" fill="#222" stroke="#FFFDF5" stroke-width="6" />
+
+                <!-- Dynamic Liquid Fill Layer -->
+                <g clip-path="url(#jar-clip)">
+                  <rect id="blender-liquid-fill" x="20" y="150" width="180" height="160" fill="#CCFF00" style="transition: all 0.35s cubic-bezier(0.16,1,0.3,1);" />
+                  <rect x="20" y="30" width="180" height="280" fill="url(#halftone-dots)" />
+                  <path id="blender-wave-path" d="M 20 12 Q 65 0 110 12 T 200 12 L 200 30 L 20 30 Z" fill="#CCFF00" transform="translate(0, 138)" style="transition: all 0.35s cubic-bezier(0.16,1,0.3,1);" />
+                </g>
+
+                <!-- Jar Measurement Tick Marks -->
+                <line x1="55" y1="80" x2="85" y2="80" stroke="#FFFDF5" stroke-width="3" />
+                <text x="92" y="84" fill="#FFFDF5" font-family="Space Mono" font-size="10" font-weight="700">500ML MAX</text>
+
+                <line x1="55" y1="135" x2="78" y2="135" stroke="#FFFDF5" stroke-width="3" />
+                <text x="85" y="139" fill="#FFFDF5" font-family="Space Mono" font-size="10" font-weight="700">350ML</text>
+
+                <line x1="55" y1="190" x2="78" y2="190" stroke="#FFFDF5" stroke-width="3" />
+                <text x="85" y="194" fill="#FFFDF5" font-family="Space Mono" font-size="10" font-weight="700">200ML</text>
+
+                <line x1="55" y1="245" x2="78" y2="245" stroke="#FFFDF5" stroke-width="3" />
+                <text x="85" y="249" fill="#FFFDF5" font-family="Space Mono" font-size="10" font-weight="700">100ML</text>
+
+                <!-- Brutalist Lid & Plunger -->
+                <rect x="22" y="12" width="176" height="20" fill="#FF0055" stroke="#070707" stroke-width="5" />
+                <rect x="95" y="0" width="30" height="14" fill="#CCFF00" stroke="#070707" stroke-width="4" />
+              </svg>
+            </div>
+
+            <div style="font-family:var(--font-mono);font-size:0.78rem;color:var(--theme-secondary);margin-bottom:6px;">
+              ACTIVE SHOTS (TAP CHIP TO EJECT):
+            </div>
+            <div class="shot-slots-bar" id="shot-slots-bar"></div>
+
+            <div class="vessel-controls">
+              <button class="nav-btn" id="shake-vessel-btn" style="background:var(--theme-yellow);">🎲 RANDOM RIOT</button>
+              <button class="nav-btn" id="flush-vessel-btn" style="background:var(--theme-hot);color:#fff;">🗑️ FLUSH JAR</button>
+            </div>
+          </div>
+
+          <!-- Column 3: Live FDA Brutalist Nutrition Facts Receipt -->
+          <div class="receipt-panel">
+            <div class="panel-header-bar">
+              <span>03 // LIVE LAB SPEC RECEIPT</span>
+              <span>BATCH #CUSTOM</span>
+            </div>
+
+            <div class="nutrition-box">
+              <div class="nutrition-title">NUTRITION FACTS</div>
+              <div class="nutrition-row">
+                <span>SERVING SIZE</span>
+                <span>1 BOTTLE (500ML)</span>
+              </div>
+              <div class="nutrition-row thick">
+                <span>CALORIES (RAW)</span>
+                <span id="nut-cal">80</span>
+              </div>
+              <div class="nutrition-row">
+                <span>VITAMIN C DOSE</span>
+                <span id="nut-vitc">190%</span>
+              </div>
+              <div class="nutrition-row">
+                <span>SCOVILLE HEAT INDEX</span>
+                <span id="nut-scoville">18,000 SHU</span>
+              </div>
+              <div class="nutrition-row">
+                <span>ADDED REFINED SUGAR</span>
+                <span>0.0G (0%)</span>
+              </div>
+              <div class="nutrition-row thick">
+                <span>CHAOS CLASSIFICATION</span>
+                <span id="nut-chaos" style="background:var(--ink);color:var(--theme-secondary);padding:0 6px;">HIGH VOLTAGE</span>
+              </div>
+
+              <div style="font-size:0.75rem;margin-top:10px;line-height:1.35;">
+                <strong>PRESSED INGREDIENTS:</strong> <span id="nut-ingredients-list">GHOST MANGO, VENOM YUZU, GINGER NAPALM</span>
+              </div>
+
+              <label for="custom-potion-name" style="display:block;font-size:0.78rem;font-weight:700;margin-top:12px;">
+                STAMP YOUR BOTTLE LABEL NAME:
+              </label>
+              <input
+                type="text"
+                id="custom-potion-name"
+                class="custom-name-input"
+                value="TOXIC SUNRISE #9"
+                maxlength="24"
+              />
+
+              <button class="btn-brutal primary" id="lock-potion-btn" style="width:100%;justify-content:center;font-size:0.95rem;">
+                LOCK IN &amp; THROW IN CRATE — $10.50
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SECTION 3: THE FLAVOR VAULT (MENU COLLAGE & 6-PACK CRATE BUILDER)
+         ===================================================================== -->
+    <section class="section-wrap" id="flavor-vault">
+      <div class="section-banner">
+        <div>
+          <span class="brutal-tag" style="display:inline-block;margin-bottom:10px;">6 CULT FORMULATIONS</span>
+          <h2 class="section-title">THE FLAVOR VAULT</h2>
+        </div>
+        <div class="crate-progress-banner">
+          <div>
+            <div style="font-size:0.75rem;color:var(--theme-secondary);">6-PACK CRATE BUILDER</div>
+            <div id="crate-bundle-status">PACK 3 MORE FOR 15% OFF</div>
+          </div>
+          <div class="crate-slots-mini" aria-hidden="true">
+            <span class="slot-dot filled"></span>
+            <span class="slot-dot filled"></span>
+            <span class="slot-dot filled"></span>
+            <span class="slot-dot"></span>
+            <span class="slot-dot"></span>
+            <span class="slot-dot"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="vault-controls">
+        <div class="filter-bar" id="vault-filter-bar" role="tablist" aria-label="Filter Juices by Vibe">
+          <button class="filter-pill active" data-filter="all">ALL RIOTS (6)</button>
+          <button class="filter-pill" data-filter="sweet-heat">🌶️ SWEET HEAT</button>
+          <button class="filter-pill" data-filter="acid-sour">🍋 ACID SOUR</button>
+          <button class="filter-pill" data-filter="nootropic">🧠 BRAIN VOLTAGE</button>
+          <button class="filter-pill" data-filter="detox-void">🖤 DETOX VOID</button>
+        </div>
+
+        <button class="btn-brutal secondary open-crate-trigger" style="padding:12px 20px;font-size:0.9rem;">
+          🧃 INSPECT CRATE (<span class="crate-count-val">3</span>)
+        </button>
+      </div>
+
+      <div class="vault-grid" id="vault-grid">
+        <!-- Populated dynamically by scripts/app.js -->
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SECTION 4: ZINE STORY — "NO CONCENTRATES, JUST 12-TON VIOLENCE"
+         ===================================================================== -->
+    <section class="zine-section" id="hydraulic-zine">
+      <div class="section-wrap">
+        <div class="section-banner">
+          <div>
+            <span class="brutal-tag hot" style="display:inline-block;margin-bottom:10px;">ISSUE #04 // STREET ZINE</span>
+            <h2 class="section-title">NO CONCENTRATES. JUST VIOLENCE.</h2>
+          </div>
+          <div class="section-kicker">
+            WHY 99% OF SUPERMARKET "JUICE" IS BOILED SUGAR WATER — AND HOW WE CRUSH IT.
+          </div>
+        </div>
+
+        <div class="zine-collage">
+          <!-- Custom Brutalist Graphic Poster SVG + Visual Showcase -->
+          <div class="zine-poster-box">
+            <svg viewBox="0 0 600 500" width="100%" height="480" role="img" aria-label="12-Ton Hydraulic Cold Press Blueprint Illustration" style="display:block;background:#120024;">
+              <defs>
+                <pattern id="zine-grid" width="30" height="30" patternUnits="userSpaceOnUse">
+                  <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(0, 240, 255, 0.2)" stroke-width="1.5"/>
+                </pattern>
+              </defs>
+              <rect width="600" height="500" fill="url(#zine-grid)" />
+
+              <!-- Giant Sunburst Backdrop -->
+              <circle cx="300" cy="250" r="190" fill="#FF0055" stroke="#070707" stroke-width="6" />
+              <circle cx="300" cy="250" r="145" fill="#FFE600" stroke="#070707" stroke-width="5" />
+
+              <!-- Hydraulic Steel Ram Top -->
+              <rect x="235" y="15" width="130" height="75" fill="#00F0FF" stroke="#070707" stroke-width="6" />
+              <rect x="130" y="90" width="340" height="45" fill="#CCFF00" stroke="#070707" stroke-width="6" />
+              <text x="300" y="120" text-anchor="middle" fill="#070707" font-family="Rubik Mono One" font-size="20">24,000 LB STEEL RAM</text>
+
+              <!-- Crushed Neon Fruit Zone -->
+              <path d="M 160 135 L 440 135 L 410 320 L 190 320 Z" fill="#FF9F1C" stroke="#070707" stroke-width="6" />
+              <circle cx="245" cy="215" r="34" fill="#FF007F" stroke="#070707" stroke-width="5" />
+              <circle cx="350" cy="235" r="40" fill="#CCFF00" stroke="#070707" stroke-width="5" />
+              <polygon points="295,160 325,210 265,210" fill="#00F0FF" stroke="#070707" stroke-width="5" />
+
+              <!-- High-Pressure Juice Streams -->
+              <rect x="190" y="320" width="220" height="35" fill="#070707" />
+              <path d="M 225 355 L 225 480" stroke="#CCFF00" stroke-width="14" stroke-linecap="round" />
+              <path d="M 300 355 L 300 485" stroke="#FF0055" stroke-width="18" stroke-linecap="round" />
+              <path d="M 375 355 L 375 480" stroke="#00F0FF" stroke-width="14" stroke-linecap="round" />
+
+              <!-- Stamp Label -->
+              <rect x="30" y="410" width="540" height="62" fill="#FFFDF5" stroke="#070707" stroke-width="6" />
+              <text x="300" y="449" text-anchor="middle" fill="#070707" font-family="Space Mono" font-weight="700" font-size="20">ZERO HEAT // ZERO PASTEURIZATION // 100% LIVE ENZYMES</text>
+            </svg>
+          </div>
+
+          <!-- 3 Brutalist Comic Zine Panels -->
+          <div class="zine-panels">
+            <div class="zine-card">
+              <span class="brutal-tag" style="position:absolute;top:-14px;right:16px;">STAGE 01 // WHOLE FRUIT</span>
+              <h3>BOUGHT AT DAWN, CRUSHED BY NOON</h3>
+              <p>
+                We source ugly, hyper-ripe organic Alphonso mangoes, crooked Peruvian ginger root, and wild yuzu directly from small-batch growers. Zero concentrates, zero syrups, zero "natural flavor" lab chemicals.
+              </p>
+            </div>
+
+            <div class="zine-card" style="background:var(--theme-yellow);">
+              <span class="brutal-tag hot" style="position:absolute;top:-14px;right:16px;">STAGE 02 // 12-TON HYDRAULICS</span>
+              <h3>ZERO CENTRIFUGAL HEAT FRICTION</h3>
+              <p>
+                Spinning blade juicers oxidize fruit with heat and kill live vitamins in seconds. Our custom 12-ton hydraulic platen presses extract every last drop of cellular nectar at 36°F so it hits your bloodstream alive.
+              </p>
+            </div>
+
+            <div class="zine-card">
+              <span class="brutal-tag" style="position:absolute;top:-14px;right:16px;">STAGE 03 // NITRO CAPPED</span>
+              <h3>SEALED IN RECYCLABLE RIOT ALUMINUM</h3>
+              <p>
+                Plastic leaches and UV light destroys chlorophyll and antioxidants. Every bottle is liquid-nitrogen dosed and sealed in pitch-black UV-proof aluminum within 90 seconds of pressing.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SECTION 5: RIOT CLUB SUBSCRIPTION & LIVE BODEGA TRUCK RADAR
+         ===================================================================== -->
+    <section class="section-wrap" id="riot-club">
+      <div class="club-radar-grid">
+        <!-- Left: Riot Club Subscription Box -->
+        <div class="club-box">
+          <span class="brutal-tag hot">SYNDICATE MEMBERSHIP</span>
+          <h2 class="section-title" style="font-size:clamp(2rem,3.5vw,3rem);margin:14px 0;">
+            JOIN THE RIOT CLUB
+          </h2>
+          <p style="font-weight:700;font-size:1.05rem;margin-bottom:18px;">
+            Get a cold-chain insulated 6-Pack Riot Crate dropped on your doorstep before 7:00 AM. Includes underground test-kitchen bottles never sold to the public.
+          </p>
+
+          <div class="freq-toggle">
+            <button class="filter-pill freq-btn active" data-plan="weekly">⚡ WEEKLY DROP (SAVE 22%)</button>
+            <button class="filter-pill freq-btn" data-plan="biweekly">📦 BI-WEEKLY (SAVE 15%)</button>
+          </div>
+
+          <div style="background:var(--theme-secondary);border:var(--border-thick);padding:16px;margin-bottom:20px;font-family:var(--font-mono);font-weight:700;">
+            <div style="font-size:1.35rem;" id="club-price-display">$42.00 / WEEK (SAVE 22%)</div>
+            <div style="font-size:0.82rem;margin-top:6px;">✓ FREE OVERNIGHT ICE-PACK COURIER &nbsp; ✓ SKIP OR KILL IN 1 CLICK</div>
+          </div>
+
+          <button class="btn-brutal primary" id="join-club-btn" style="width:100%;justify-content:center;">
+            + LOCK IN RIOT CLUB 6-PACK SUBSCRIPTION
+          </button>
+        </div>
+
+        <!-- Right: Live Pop-Up Juice Truck & Bodega Radar -->
+        <div class="radar-box">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <span class="brutal-tag" style="background:var(--theme-secondary);color:var(--ink);">LIVE GPS TELEMETRY</span>
+            <span style="font-family:var(--font-mono);font-size:0.82rem;">3 ARMORED TRUCKS ACTIVE</span>
+          </div>
+
+          <h2 class="section-title" style="color:var(--paper);font-size:clamp(2rem,3.5vw,3rem);margin:14px 0;">
+            BODEGA &amp; TRUCK RADAR
+          </h2>
+
+          <div class="radar-screen" aria-label="Interactive Pop-Up Juice Truck Radar">
+            <div class="radar-sweep" aria-hidden="true"></div>
+
+            <button class="truck-pin" style="top:26%;left:22%;" data-unit="TRUCK #01 // WILLIAMSBURG BEDFORD" data-stock="42 BOTTLES LEFT">
+              🚚 UNIT-01 [SOHO / WBURG]
+            </button>
+
+            <button class="truck-pin" style="top:62%;left:54%;" data-unit="TRUCK #02 // SHIBUYA CROSSING DROP" data-stock="19 BOTTLES LEFT (LOW!)">
+              🚚 UNIT-02 [DOWNTOWN YARD]
+            </button>
+
+            <button class="truck-pin" style="top:34%;left:68%;" data-unit="BODEGA VAULT // NIGHT OWL DELI" data-stock="88 BOTTLES RESTOCKED">
+              🏪 BODEGA #09 [24/7 FRIDGE]
+            </button>
+          </div>
+
+          <div id="radar-telemetry-readout" style="font-family:var(--font-mono);font-size:0.85rem;background:#1a1a1a;padding:12px;border:2px solid var(--theme-secondary);">
+            &gt;&gt; TAP ANY RADAR PIN ABOVE TO INSPECT LIVE COLD-CRATE INVENTORY
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SECTION 6: WHOLESALE & CATERING "CUSTOMS MANIFEST" CONTACT FORM
+         ===================================================================== -->
+    <section class="manifest-section" id="manifest-hotline">
+      <div class="section-wrap">
+        <div class="section-banner">
+          <div>
+            <span class="brutal-tag" style="display:inline-block;margin-bottom:10px;">FORM #904-HAZMAT</span>
+            <h2 class="section-title">CUSTOMS &amp; WHOLESALE MANIFEST</h2>
+          </div>
+          <div class="section-kicker">
+            STOCK PULP RIOT IN YOUR BODEGA, BOOK OUR ARMORED JUICE TRUCK FOR A RAVE, OR DEMAND A NEW FLAVOR.
+          </div>
+        </div>
+
+        <div class="manifest-clipboard">
+          <!-- Rubber Stamp Submission Overlay -->
+          <div class="rubber-stamp-overlay" id="manifest-stamp-overlay" aria-live="polite">
+            <div class="stamp-box">
+              APPROVED // JUICE INBOUND
+            </div>
+            <p id="manifest-receipt-summary" style="font-family:var(--font-mono);font-weight:700;font-size:1.1rem;background:var(--ink);color:var(--theme-secondary);padding:12px 20px;margin-bottom:20px;text-align:center;">
+              MANIFEST DISPATCHED TO HYDRAULIC COMMAND.
+            </p>
+            <button type="button" class="btn-brutal primary" id="reset-manifest-btn">
+              FILE ANOTHER DISPATCH MANIFEST
+            </button>
+          </div>
+
+          <form id="riot-manifest-form">
+            <div class="manifest-grid">
+              <div class="form-group">
+                <label class="form-label" for="manifest-name">01 // OPERATIVE / ALIAS NAME *</label>
+                <input class="form-input" type="text" id="manifest-name" required placeholder="E.G. RICO // NEON BODEGA NYC" />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="manifest-email">02 // COMMS CHANNEL (EMAIL / SIGNAL) *</label>
+                <input class="form-input" type="email" id="manifest-email" required placeholder="RICO@NIGHTBODEGA.COM" />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="manifest-type">03 // MISSION CLASSIFICATION *</label>
+                <select class="form-select" id="manifest-type">
+                  <option value="BODEGA / RETAIL WHOLESALE">🏪 STOCK IN MY BODEGA / GYM / CAFE</option>
+                  <option value="RAVE / FESTIVAL CATERING">🔊 RAVE / FESTIVAL / VIP EVENT CATERING</option>
+                  <option value="COLLAB / CUSTOM BATCH">🧪 LIMITED EDITION ARTIST / BRAND COLLAB</option>
+                  <option value="FLAVOR DEMAND / HOTLINE">🌶️ FLAVOR REQUEST OR SCOVILLE COMPLAINT</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="manifest-volume">04 // ESTIMATED CRATE PAYLOAD</label>
+                <select class="form-select" id="manifest-volume">
+                  <option value="10 - 25 CRATES / MONTH">10 – 25 CRATES (STARTER FRIDGE)</option>
+                  <option value="50 - 100 CRATES / MONTH">50 – 100 CRATES (FULL SYNDICATE)</option>
+                  <option value="ONE-OFF EVENT PALLET">1 FULL PALLET (EVENT DETONATION)</option>
+                  <option value="SINGLE OPERATIVE">SINGLE OPERATIVE / DIRECT MESSAGE</option>
+                </select>
+              </div>
+
+              <div class="form-group full">
+                <label class="form-label" for="manifest-notes">05 // DROP COORDINATES &amp; SPECIAL INSTRUCTIONS *</label>
+                <textarea class="form-textarea" id="manifest-notes" rows="4" required placeholder="DROP YOUR ADDRESS, EVENT DATE, OR WHICH FLAVOR YOU WANT US TO WEAPONIZE NEXT..."></textarea>
+              </div>
+
+              <div class="form-group full">
+                <button type="submit" class="btn-brutal primary" style="width:100%;justify-content:center;font-size:1.2rem;padding:20px;">
+                  🚨 TRANSMIT MANIFEST &amp; SLAM THE STAMP
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =======================================================================
+       SLIDE-OUT 6-PACK CRATE CART DRAWER
+       ======================================================================= -->
+  <div class="crate-backdrop" id="crate-backdrop" aria-hidden="true"></div>
+  <aside class="crate-drawer" id="crate-drawer" aria-label="Your 6-Pack Riot Crate">
+    <div class="drawer-header">
+      <div>
+        <div style="font-family:var(--font-display);font-size:1.3rem;">🧃 YOUR RIOT CRATE</div>
+        <div style="font-family:var(--font-mono);font-size:0.75rem;">PACK 6+ BOTTLES FOR AUTOMATIC 15% OFF</div>
+      </div>
+      <button class="nav-btn" id="close-crate-btn" style="background:var(--theme-hot);color:#fff;">✕ CLOSE</button>
+    </div>
+
+    <div class="drawer-body" id="drawer-items-list">
+      <!-- Populated by scripts/app.js -->
+    </div>
+
+    <div class="drawer-footer">
+      <div style="font-family:var(--font-mono);font-size:0.85rem;display:flex;justify-content:space-between;margin-bottom:6px;">
+        <span>RAW SUBTOTAL:</span>
+        <strong id="drawer-subtotal">$26.00</strong>
+      </div>
+      <div style="font-family:var(--font-mono);font-size:0.85rem;display:flex;justify-content:space-between;margin-bottom:10px;color:#D90429;">
+        <span>6-PACK SYNDICATE DISCOUNT:</span>
+        <strong id="drawer-discount">$0.00</strong>
+      </div>
+      <div style="font-family:var(--font-display);font-size:1.4rem;display:flex;justify-content:space-between;border-top:4px solid var(--ink);padding-top:10px;margin-bottom:14px;">
+        <span>TOTAL:</span>
+        <span id="drawer-total">$26.00</span>
+      </div>
+      <button class="btn-brutal secondary" id="checkout-riot-btn" style="width:100%;justify-content:center;">
+        ⚡ DISPATCH COLD-CHAIN ORDER
+      </button>
+    </div>
+  </aside>
+
+  <!-- =======================================================================
+       MAXIMALIST FULL-WIDTH FOOTER
+       ======================================================================= -->
+  <footer class="riot-footer">
+    <div class="footer-giant-wordmark">PULP RIOT™</div>
+    <div class="footer-meta-row">
+      <div>© 2026 PULP RIOT COLD-PRESS SYNDICATE // ALL RIGHTS VIOLENTLY RESERVED.</div>
+      <div>PRESSED AT 36°F // ZERO CONCENTRATE // 100% ACID POP BRUTALISM</div>
+      <div>
+        <a href="#hero" class="nav-btn" style="background:var(--theme-secondary);">↑ BACK TO TOP</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =======================================================================
+       MOBILE THUMB-ZONE ARCADE DOCK (<= 768PX)
+       ======================================================================= -->
+  <nav class="mobile-arcade-dock" aria-label="Mobile Quick Actions">
+    <a href="#lab-riot" class="dock-btn">🧪 MIX LAB</a>
+    <a href="#flavor-vault" class="dock-btn">💣 VAULT</a>
+    <a href="#manifest-hotline" class="dock-btn">📋 MANIFEST</a>
+    <button class="dock-btn hot open-crate-trigger">🧃 CRATE (<span class="crate-count-val">3</span>)</button>
+  </nav>
+
+  <!-- LIVE SYNDICATE ACTIVITY POPUP -->
+  <div class="live-syndicate-toast" id="syndicate-toast" role="status" aria-live="polite">
+    <span class="toast-pill">LIVE DISPATCH</span>
+    <span id="toast-message">Operative in Brooklyn claimed 2x Napalm Mango</span>
+  </div>
+
+  <script src="scripts/app.js"></script>
+</body>
+</html>
